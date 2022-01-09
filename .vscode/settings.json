@@ -1,0 +1,41 @@
+{
+  // VS CodeのPowerShellから仮想環境を有効（activate.ps1）が実行できるように
+  "terminal.integrated.env.windows": {
+    "PSExecutionPolicyPreference": "RemoteSigned"
+  },
+  // Pythonのパスを指定
+  "python.pythonPath": ".\\venv\\Scripts\\python.exe",
+  // pycashファイルをエクスプローラーから非表示にする
+  "files.exclude": {
+    "**/__pycache__": true
+  },
+  // 保存時にフォーマット
+  "editor.formatOnSave": true,
+  // black に設定
+  "python.formatting.provider": "black",
+  // Pylintは無効化
+  "python.linting.pylintEnabled": false,
+  // flake8を有効にする
+  "python.linting.flake8Enabled": true,
+  "python.linting.lintOnSave": true,
+  "python.linting.flake8Args": [
+    // コードフォーマッターのblackが1行88文字仕様。
+    // flake8は79文字でエラーを出すため、flake8の設定を変更
+    "--max-line-length=88",
+    // "--max-line-length=119",
+    "--ignore=E203,W503,W504,F401"
+  ],
+  // import順序の整頓
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+
+  // settingファイルのフォーマット用
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
+
+// mypyを有効にする
+//   "python.linting.mypyEnabled": true,
+// 保存するたびにコードチェックされるようにする
