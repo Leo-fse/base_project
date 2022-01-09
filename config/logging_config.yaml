@@ -1,0 +1,35 @@
+version: 1
+formatters:
+  simple:
+    format: "%(asctime)s - %(levelname)-8s - %(name)-12s - %(module)s - %(funcName)s - %(lineno)-3s - %(message)s"
+    datefmt: "%Y/%m/%d %I:%M:%S %p"
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: simple
+    stream: ext://sys.stdout
+  file:
+    class: logging.handlers.RotatingFileHandler
+    level: DEBUG
+    formatter: simple
+    filename: logs\logconfig.log
+    encoding: utf-8
+    maxBytes: 262144
+    backupCount: 1
+  errorFile:
+    class: logging.handlers.RotatingFileHandler
+    level: ERROR
+    formatter: simple
+    filename: logs\errorconfig.log
+    encoding: utf-8
+    maxBytes: 262144
+    backupCount: 1
+loggers:
+  errorLog:
+    level: ERROR
+    handlers: [errorFile]
+    propagate: no
+root:
+  level: DEBUG
+  handlers: [console, file]

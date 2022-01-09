@@ -16,7 +16,7 @@ OUTPUT_DIR = os.path.join(DATA_DIR, "output")
 # os.makedirs(OUTPUT_DIR, exist_ok=True)
 # os.makedirs(LOG_DIR, exist_ok=True)
 
-LOG_CONFIG_PATH = os.path.join(ROOT_DIR, "config", "logging.ini")
+LOG_CONFIG_PATH = os.path.join(ROOT_DIR, "config", "logging_config.yaml")
 
 # ENVIRONMENT = os.getenv("ENVIROMENT", "dev")
 # # iniファイルの読み込み
