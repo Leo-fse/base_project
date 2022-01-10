@@ -1,6 +1,6 @@
 import logging
 
-from libs.janken.janken import JankenSimulator
+from libs.janken import JankenSimulator
 
 logger = logging.getLogger(__name__)
 e_logger = logging.getLogger("errorLog")
