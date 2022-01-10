@@ -2,12 +2,11 @@ from collections import Counter
 
 
 def get_number_with_highest_count(counts):
-    max_count = 0
-    for number, count in counts.items():
-        if count > max_count:
-            max_count = count
-            get_number_with_highest_count = number
-    return get_number_with_highest_count
+    return max(
+        counts,
+        key=lambda number: counts[number]
+        # 第2引数keyの値としてnumberを引数として受け取りcounts[number]を返す関数を指定
+    )
 
 
 def most_frequent(numbers):
