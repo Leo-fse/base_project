@@ -1,10 +1,11 @@
 import logging
 
-from libs.janken import janken
+from libs.janken.janken import JankenSimulator
 
 logger = logging.getLogger(__name__)
 e_logger = logging.getLogger("errorLog")
 
 
 if __name__ == "__main__":
-    janken.main()
+    janken = JankenSimulator()
+    janken.simulate()
