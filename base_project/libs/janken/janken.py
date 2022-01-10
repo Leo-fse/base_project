@@ -17,7 +17,8 @@ def print_option():
 
 def get_human_choice():
     # リストのインデックスと合わせるために -1
-    human_choice = OPTIONS[int(input("「グー」か「チョキ」か「パー」を番号で選んでください : ")) - 1]
+    human_choice_num = int(input("「グー」か「チョキ」か「パー」を番号で選んでください : "))
+    human_choice = OPTIONS[human_choice_num - 1]
     return human_choice
 
 
