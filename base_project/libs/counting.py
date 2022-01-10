@@ -1,3 +1,6 @@
+from collections import defaultdict
+
+
 def get_number_with_highest_count(counts):
     max_count = 0
     for number, count in counts.items():
@@ -8,11 +11,8 @@ def get_number_with_highest_count(counts):
 
 
 def most_frequent(numbers):
-    counts = {}
+    counts = defaultdict(int)
     for number in numbers:
-        if number in counts:
-            counts[number] += 1
-        else:
-            counts[number] = 1
+        counts[number] += 1
 
     return get_number_with_highest_count(counts)
