@@ -30,6 +30,7 @@ loggging_config = {
     "root": {"level": "DEBUG", "handlers": ["console", "file"]},
     "loggers": {
         "errorLog": {"level": "ERROR", "handlers": ["errorFile"], "propagate": False},
+        "janken": {"level": "DEBUG", "handlers": ["janken"], "propagate": False},
     },
     "handlers": {
         "console": {
@@ -54,6 +55,14 @@ loggging_config = {
             "mode": "w",
             "encoding": "utf-8",
         },
+        "janken": {
+            "class": "logging.FileHandler",
+            "level": "DEBUG",
+            "formatter": "janken",
+            "filename": f"{LOG_DIR}/janken.log",
+            "mode": "a",
+            "encoding": "utf-8",
+        },
     },
     "formatters": {
         "error": {
@@ -65,6 +74,10 @@ loggging_config = {
                 "%(asctime)s - %(levelname)-8s - %(name)-12s - %(module)-10s - "
                 "%(funcName)-10s - %(lineno)-3s - %(message)s"
             ),
+            "datefmt": "%Y-%m-%d %I:%M:%S %p",
+        },
+        "janken": {
+            "format": "%(asctime)s - %(message)s",
             "datefmt": "%Y-%m-%d %I:%M:%S %p",
         },
     },
