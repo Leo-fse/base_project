@@ -9,7 +9,10 @@ OPTIONS = ["グー", "チョキ", "パー"]
 
 
 def print_option():
-    print("(1)グー\n(2)チョキ\n(3)パー")
+    OPTIONS_WITH_INDEX = [
+        f"({index}) {option}" for index, option in enumerate(OPTIONS, 1)
+    ]
+    print("\n".join(OPTIONS_WITH_INDEX))
 
 
 def get_human_choice():
